@@ -26,7 +26,15 @@ export const RoomProvider = ({ children }) => {
     });
   };
 
+  const getRoom = slug => {
+    const tmpRooms = [...state.rooms];
+    const room = tmpRooms.find(room => room.slug === slug);
+    return room;
+  };
+
   return (
-    <RoomContext.Provider value={{ ...state }}>{children}</RoomContext.Provider>
+    <RoomContext.Provider value={{ ...state, getRoom }}>
+      {children}
+    </RoomContext.Provider>
   );
 };
