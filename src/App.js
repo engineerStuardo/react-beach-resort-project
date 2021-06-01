@@ -1,4 +1,5 @@
 import React from 'react';
+import { Route, Switch } from 'react-router-dom';
 
 import './App.css';
 import Home from './pages/Home';
@@ -9,10 +10,12 @@ import Error from './pages/Error';
 function App() {
   return (
     <>
-      <Home />
-      <Rooms />
-      <SingleRoom />
-      <Error />
+      <Switch>
+        <Route path='/' exact component={Home} />
+        <Route path='/rooms' exact component={Rooms} />
+        <Route path='/rooms/:id' exact component={SingleRoom} />
+        <Route component={Error} />
+      </Switch>
     </>
   );
 }
