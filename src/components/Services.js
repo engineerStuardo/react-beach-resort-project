@@ -4,6 +4,7 @@ import { FaCocktail, FaHiking, FaShuttleVan, FaBeer } from 'react-icons/fa';
 import Title from './Title';
 
 const Services = () => {
+  // eslint-disable-next-line
   const [services, setServices] = useState([
     {
       icon: <FaCocktail />,

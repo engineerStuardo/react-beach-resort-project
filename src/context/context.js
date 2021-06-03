@@ -1,5 +1,5 @@
 import React, { createContext, useState, useEffect } from 'react';
-
+// eslint-disable-next-line
 import items from '../data';
 import Client from '../contenful';
 
@@ -13,6 +13,7 @@ export const RoomProvider = ({ children }) => {
   const [type, setType] = useState('all');
   const [capacity, setCapacity] = useState(1);
   const [price, setPrice] = useState(0);
+  // eslint-disable-next-line
   const [minPrice, setMinPrice] = useState(0);
   const [maxPrice, setMaxPrice] = useState(0);
   const [minSize, setMinSize] = useState(0);
@@ -43,6 +44,7 @@ export const RoomProvider = ({ children }) => {
 
   useEffect(() => {
     getData();
+    // eslint-disable-next-line
   }, []);
 
   const formatData = items => {
@@ -98,6 +100,7 @@ export const RoomProvider = ({ children }) => {
 
   useEffect(() => {
     setSortedRooms(filterRooms());
+    // eslint-disable-next-line
   }, [type, rooms, capacity, price, minSize, maxSize, breakfast, pets]);
 
   return (
